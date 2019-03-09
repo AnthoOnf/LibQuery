@@ -1,0 +1,31 @@
+<section>
+  <div class="home">
+    <div class="title">ML-Powered Historical<br>Research Made User-Friendly</div>
+    <mat-tab-group style="background-color: white; width:30%; z-index: 3;">
+      <mat-tab label="Cities">
+        <mat-card class="home__login">
+          <mat-card-content>
+            <form [formGroup]="parentForm">
+              <app-form-search [parentForm]="parentForm"></app-form-search>
+              <button mat-flat-button (click)="search()">Search</button>
+            </form>
+          </mat-card-content>
+        </mat-card>
+      </mat-tab>
+    <mat-tab label="Authors" style="color:white!important;">
+        <mat-card style="min-height:150px;" class="home__login">
+            <mat-card-content>
+              <div class="input-icon login__item" style="margin-bottom:-5px;">
+                <input type="text" style="margin-bottom:0;" class="input" placeholder="Search for persons" (keyup)="onAuthorChange($event)" [(ngModel)]="person">
+                <i class="fas fa-user"></i>
+              </div>
+              <ul class="authors-suggest">
+                <li *ngFor="let author of authors" class="author-suggest" (click)="getAuthor(author)">{{ author }}</li>
+              </ul>
+            </mat-card-content>
+        </mat-card>
+      </mat-tab>
+    </mat-tab-group>
+    <router-outlet></router-outlet>
+  </div>
+</section>

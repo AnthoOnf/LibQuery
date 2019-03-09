@@ -1,0 +1,49 @@
+<div class="detail-article-container">
+
+    <div class="search-results-header">
+
+        <i class="fas fa-angle-left" style="color:blueviolet; margin-left:10px; margin-right: 20px;"></i>
+        <div (click)="goBack()" class="search-nb-results">
+            SEARCH RESULTS
+        </div>
+
+
+        <div class="search-bank-logo">
+          <img src="/assets/bdl_logo.svg">
+        </div>
+      </div>
+
+    <div class="article">
+    <div class="article-wrapper">
+      <div class="article-title-wrapper">
+          <div class="article-title">
+              {{ detailArticle.title }}
+          </div>
+          <button mat-flat-button class="reset-button" (click)="sendToPdf(detailArticle)">View PDF</button>
+      </div>
+
+      <div class="article-subtitle">
+          <div class="newspaper-name">{{ detailArticle.newspaper }},</div>
+          <div class="article-date">&nbsp;{{ detailArticle.date }}</div>
+      </div>
+      <div class="article-content">
+          {{ detailArticle.body }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="related-article-container">
+
+    <div class="article">
+      <div class="article-wrapper">
+        <div class="article-title">
+          Related articles
+        </div>
+        <div style="padding-top:20px;">
+          <i style="padding: 10px; font-size: 25px; color:''" class="fab fa-google"></i>
+          <a class="related-articles-link" [href]="getRelatedArticle(detailArticle)" target="_blank">More Google articles</a>
+        </div>
+      </div>
+  </div>
+</div>

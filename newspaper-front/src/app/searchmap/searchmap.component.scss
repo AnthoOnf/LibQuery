@@ -1,0 +1,287 @@
+@import "../../colors";
+app-detail-article {
+    width: 50%;
+    position: absolute;
+    height: 100%;
+    z-index: 99;
+    overflow: hidden;
+}
+
+.no-results {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-top: 1.5em;
+  color: $electric-violet;
+}
+.fa-angle-right {
+    color: $electric-violet;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.search-city {
+  min-height: 50px;
+}
+
+.search-city__name {
+  text-transform: capitalize;
+}
+
+.search-container {
+    z-index: 1;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 20%;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 12px 17px 2px rgba(0, 0, 0, 0.14);
+    background-color: #ffffff;
+}
+
+.search-bar-display {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.articles-container {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    flex-grow: 8;
+    flex-basis: 20%;
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.14);
+    background-color: $gallery;
+    max-height: 100vh;
+}
+
+.map-container {
+    flex-basis: 50%;
+    background-color: blue;
+}
+
+.search-results-header {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+.search-nb-results {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    flex-grow: 8;
+}
+
+.search-bank-logo {
+    width: 48px;
+    height: 48px;
+}
+
+.search-result-keyword {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #6200ee;
+}
+
+::ng-deep .mat-checkbox-background {
+  background: $deep-sea !important;
+}
+
+.expandable-panel {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px;
+    padding-left: 0px !important;
+    margin-top: 20px;
+}
+
+.expandable-panel-header {
+    padding: 0 10px 0 0;
+}
+
+.expandable-panel-header-title {
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 0.3px;
+    color: #6200ee;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    padding: 0 0 20px 0 !important;
+    margin: 0;
+}
+
+::ng-deep .mat-checkbox {
+    //background: green;
+    margin: 0 10px 10px 0px;
+}
+
+.new-search-button {
+    background-color: white;
+    color: $electric-violet;
+    margin-right: 10px;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+}
+
+.reset-button {
+    background-color: $electric-violet;
+    color: white;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top: 20px;
+}
+
+.article {
+    &:nth-child(odd) {
+        background: #F7F6F6;
+    }
+}
+
+.article-wrapper {
+    padding: 20px 30px 0px 30px;
+    cursor: pointer;
+}
+
+.article-title {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.article-subtitle {
+    display: flex;
+    margin-top: 6px;
+    margin-bottom: 9px;
+}
+
+.newspaper-name {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.33;
+    letter-spacing: 0.4px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.article-date {
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.4px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.article-content {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: justify;
+}
+
+.max-lines {
+    display: block;
+    /* or inline-block */
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow: hidden;
+    max-height: 3.3em;
+    line-height: 1.1em;
+}
+
+.article-separator {
+    margin-top: 30px;
+    width: 100%;
+    height: 1px;
+    background-color: #c4c4c4;
+}
+
+.period-selection {
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
+
+.years {
+    display: flex;
+    justify-content: space-between;
+    .year__label {
+        display: block;
+        font-size: 12px;
+        &.right {
+            text-align: right;
+        }
+    }
+    .year__value {
+        font-size: 14px;
+        color: $electric-violet;
+    }
+}
+
+.load-more {
+    background: $electric-violet;
+    min-height: 40px;
+    border-radius: 0;
+}
+
+::ng-deep .leaflet-popup-content {
+  text-transform: capitalize;
+}
+
+::ng-deep .leaflet-popup-content-wrapper, ::ng-deep .leaflet-popup-tip {
+  background: $electric-violet;
+  color: white;
+  font-size: 16px;
+}
+
+::ng-deep  .tooltip-articles {
+  list-style: none;
+  padding: 0;
+
+  li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:not(:last-child) {
+      margin-bottom: 0.5em;
+    }
+  }
+
+  a {
+    color: white;
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}
+
+.loading-more {
+  background: #6914ef;
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .sk-spinner-pulse {
+    background: white;
+  }
+}
+
+.search-result-keyword {
+  margin-bottom: 1em;
+}

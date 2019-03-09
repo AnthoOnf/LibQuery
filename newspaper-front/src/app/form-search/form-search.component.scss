@@ -1,0 +1,38 @@
+@import "../../colors";
+
+.select {
+    width: 100%;
+    height: 40px;
+    margin-top: 1.5em;
+    font-size: 16px;
+    &:after {
+        content: '';
+    }
+    background: white;
+    .placeholder {
+        color: $gray;
+    }
+}
+.login__item {
+  &:not(:last-child) {
+      margin-bottom: 1.5em;
+  }
+}
+.years {
+    display: flex;
+    justify-content: space-between;
+    .year__label {
+        display: block;
+        font-size: 14px;
+        &.right {
+            text-align: right;
+        }
+    }
+    .year__value {
+        color: $electric-violet;
+    }
+}
+
+.fas {
+    color: $gray;
+}

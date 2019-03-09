@@ -1,0 +1,99 @@
+<div class="results-container">
+  <app-detail-article [@enterAnimation] *ngIf="!displaySearch" [detailArticle]="detailArticle"
+    (displaySearch)="updateDisplaySearch($event)"></app-detail-article>
+  <div class="search-container">
+    <div class="search-bar-display">
+      <div>
+        <div class="search-results-header">
+          <div class="search-nb-results">
+            Related articles found for :
+          </div>
+          <div class="search-bank-logo">
+            <img src="/assets/bdl_logo.svg">
+          </div>
+        </div>
+        <div class="search-result-keyword">
+          {{ city }}
+        </div>
+        <div class="search-city" *ngIf="cities.length > 0">
+          <mat-expansion-panel class="expandable-panel">
+            <mat-expansion-panel-header class="expandable-panel-header">
+              <mat-panel-title class="expandable-panel-header-title">
+                <i class="fas fa-map-marker-alt" style="color:rgba(0, 0, 0, 0.54); margin-right:5px;"></i>In
+                {{ cities.length }} Cities
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-checkbox *ngFor="let city of cities" class="search-city__name" (click)="onCityClick(city)"
+              checked="city.isChecked">{{ city.name }}</mat-checkbox>
+
+          </mat-expansion-panel>
+        </div>
+        <!-- <div class="period-selection">
+          <div class="years">
+            <div class="year">
+              <span class="year__label">From</span>
+              <span class="year__value">{{ ranges[0] }}</span>
+            </div>
+            <div class="year">
+              <span class="year__label right">To</span>
+              <span class="year__value">{{ ranges[1] }}</span>
+            </div>
+          </div>
+          <nouislider class="login__item login__dates" [config]="config" [(ngModel)]="ranges"></nouislider>
+        </div> -->
+        <form [formGroup]="parentForm">
+          <app-form-search [parentForm]="parentForm" [initialValues]="initialValues"></app-form-search>
+          <div class="button-wrapper">
+            <button mat-flat-button type="submit" class="new-search-button" (click)="onNewSearch()">Search</button>
+            <button mat-flat-button class="reset-button" (click)="onReset()">Reset</button>
+          </div>
+        </form>
+      </div>
+      <div>
+        <button mat-flat-button class="new-search-button" (click)="goToHome()"><i class="fas fa-angle-left"
+            style="margin-right:5px;"></i>Home</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="articles-container">
+    <div *ngFor="let article of articlesShown" class="article">
+      <div (click)="goToDetail(article)" class="article-wrapper">
+        <div class="article-title" [ngClass]="{'loader-element loader-element__text--medium': loading}">
+          {{ article.title }}
+          <i *ngIf="!loading" class="fas fa-angle-right" style="margin-left:10px;"></i>
+        </div>
+        <div class="article-subtitle" [ngClass]="{'loader-element loader-element__text--small': loading}">
+          <div class="newspaper-name" *ngIf="article.newspaper">
+            {{ article.newspaper.substring(0, article.newspaper.lastIndexOf(' ') - 1) }},</div>
+          <div class="article-date">&nbsp;{{ article.date }}</div>
+        </div>
+        <div class="article-content max-lines" *ngIf="!loading">
+          {{ article.body }}
+        </div>
+        <div *ngIf="loading">
+          <span class="loader-element loader-element__text-"></span>
+          <span class="loader-element loader-element__text"></span>
+          <span class="loader-element loader-element__text"></span>
+          <span class="loader-element loader-element__text"></span>
+        </div>
+      </div>
+      <div class="article-separator"></div>
+    </div>
+    <button *ngIf="!loadingMore && !loading && !noMoreArticle && articles.length > 0" class="load-more" mat-flat-button
+      color="primary" (click)="loadMore()">Load more</button>
+    <div class="loading-more" *ngIf="loadingMore">
+      <div class="sk-spinner-pulse">
+      </div>
+    </div>
+    <div class="no-results" *ngIf="articles.length === 0">
+      <i class="fas fa-search"></i>
+      <span class="no-results">No results found for this filtering</span>
+    </div>
+  </div>
+
+  <div class="map-container">
+    <div id="map" style="height:100vh; width:100%;"></div>
+  </div>
+
+</div>

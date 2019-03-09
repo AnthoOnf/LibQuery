@@ -1,0 +1,87 @@
+@import "../../colors";
+.home {
+    background: url('../../assets/bg.svg');
+    &:after {
+        content: ' ';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: black;
+        opacity: 0.5;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    .parent-card-tab {
+        background-color: white;
+        width:30%;
+        z-index: 3;
+    }
+
+    .mat-card {
+        padding: 1em 5em;
+        box-sizing: border-box;
+    }
+    .mat-card-content {
+        width: 100%;
+    }
+    h2 {
+        color: white;
+        z-index: 1;
+    }
+    .title {
+        font-size: 24px;
+        font-weight: bold;
+        font-style: normal;
+        font-stretch: normal;
+        line-height: normal;
+        letter-spacing: 0.3px;
+        color: #ffffff;
+        z-index: 1;
+        text-align: left;
+        margin-left: -100px;
+    }
+    .home__login {
+        z-index: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    button {
+        float: right;
+        margin-top: 1.5em;
+        background: $mercury;
+        color: $gray;
+    }
+
+    .authors-suggest {
+        margin: 0;
+        //display: none;
+        max-height: 150px;
+        overflow: scroll;
+        padding-inline-start: 0;
+        list-style: none;
+        border-left: 1px solid rgba(0, 0, 0, 0.87);
+        border-right: 1px solid rgba(0, 0, 0, 0.87);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.87);
+        //border: 1px solid rgba(0, 0, 0, 0.87);
+    }
+
+    .author-suggest {
+        color: rgba(0, 0, 0, 0.87);
+        font-size: 16px;
+        height: 30px;
+        padding: 10px 0 10px 0;
+    }
+    .author-suggest:hover {
+        color: white;
+        background-color: blueviolet;
+        cursor: pointer;
+    }
+}

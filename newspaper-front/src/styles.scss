@@ -1,0 +1,143 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~nouislider/distribute/nouislider.min.css";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "../node_modules/roboto-fontface/css/roboto/roboto-fontface.css";
+@import "./loading";
+@import "./colors";
+@import "../node_modules/spinkit/scss/spinners/5-pulse.scss";
+
+body {
+    margin: 0;
+    font-family: "Roboto";
+}
+
+.noUi-target {
+  height: 2px;
+  border: 0;
+  background: #777777;
+  box-shadow: none;
+  display: flex;
+  justify-content: center;
+}
+
+.noUi-handle {
+  top: -9px !important;
+  height: 20px !important;
+  width: 20px !important;
+  box-shadow: none;
+  border: 0;
+  border-radius: 50%;
+  &:after, &:before {
+    opacity: 0;
+  }
+  cursor: pointer;
+}
+
+.noUi-connect {
+    background: #6914ef;
+}
+
+.noUi-base {
+  width: 95%;
+  position: absolute;
+  left: 0;
+}
+
+.noUi-horizontal .noUi-handle,
+.noUi-vertical .noUi-handle {
+    background: #6914ef;
+}
+
+.noUi-target.noUi-horizontal .noUi-tooltip {
+    background-color: purple;
+}
+
+/**** Custom styles for Range ****/
+
+input[type=range]::-webkit-slider-thumb {
+    background-color: skyblue;
+}
+
+input[type=range]::-moz-range-thumb {
+    background-color: skyblue;
+}
+
+input[type=range]::-ms-thumb {
+    background-color: skyblue;
+}
+
+/* For the globe and the text inside */
+
+input[type=range]+.thumb {
+    background-color: #6914ef;
+}
+
+input[type=range]+.thumb.active .value {
+    color: #fff;
+}
+
+.mat-form-field-infix {
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.mat-form-field-underline {
+  display: none;
+}
+
+.mat-input-element {
+  padding-left: 0.5em !important;
+  height: 30px;
+  max-height: 30px;
+  box-sizing: border-box;
+}
+
+.mat-form-field-wrapper {
+  padding-bottom: 0 !important;
+}
+
+.mat-form-field-label {
+  padding-left: 0.5em !important;
+  position: relative !important;
+  top: 0 !important;
+  &-wrapper {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.mat-form-field-should-float {
+  .mat-form-field-label {
+    display: none !important;
+  }
+}
+
+.mat-form-field-type-mat-select {
+  .mat-form-field-infix {
+    padding: 0 !important;
+    overflow: hidden;
+  }
+}
+
+.input-icon {
+  height: 40px;
+  border: 1px solid $gray;
+  border-radius: 5px;
+  overflow: hidden;
+  .input {
+      font-size: 16px;
+      border: none;
+      height: 100%;
+      width: 90%;
+      position: relative;
+      box-sizing: border-box;
+      padding: 0 0 0 1em;
+      &:hover,
+      &:active,
+      &:visited,
+      &:focus {
+          outline: none;
+      }
+  }
+}

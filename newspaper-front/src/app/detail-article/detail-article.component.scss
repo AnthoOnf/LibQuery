@@ -1,0 +1,217 @@
+.results-container {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
+.detail-article-container {
+    height: 65%;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 20%;
+    flex-direction: column;
+    padding: 5px 20px 20px 20px;
+    box-shadow: 0 7px 8px -4px rgba(0, 0, 0, 0.2), 0 5px 22px 4px rgba(0, 0, 0, 0.12), 0 12px 17px 2px rgba(0, 0, 0, 0.14);
+    background-color: #ffffff;
+    padding: 20px;
+}
+
+.related-article-container {
+    height: 35%;
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 20%;
+    flex-direction: column;
+    padding: 5px 20px 20px 20px;
+
+    background-color: #f0eeee;
+}
+
+.search-bar-display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.articles-container {
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    flex-grow: 8;
+    flex-basis: 20%;
+    box-shadow: 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 24px 38px 3px rgba(0, 0, 0, 0.14);
+    background-color: #f0eeee;
+    max-height: 100vh;
+}
+
+.map-container {
+    flex-basis:40%;
+    background-color: blue;
+}
+
+.search-results-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor:pointer;
+    min-height: 50px;
+
+}
+
+.search-nb-results {
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+    flex-grow: 8;
+    color:blueviolet;
+}
+
+.search-bank-logo {
+    width: 48px;
+    height: 48px;
+}
+
+.search-result-keyword {
+    margin-top : 30px;
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #6200ee;
+}
+
+.expandable-panel {
+    border: none;
+    box-shadow: none;
+    border-bottom: 1px;
+    padding-left: 0px !important;
+    margin-top: 20px;
+}
+
+.expandable-panel-header {
+    padding: 0 10px 0 0;
+}
+
+.expandable-panel-header-title {
+    font-size: 14px;
+    line-height: 1.43;
+    letter-spacing: 0.3px;
+    color: #6200ee;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    padding: 0 0 20px 0!important;
+    margin: 0;
+}
+
+::ng-deep .mat-checkbox  {
+     //background: green;
+     margin: 0 10px 10px 0px;
+}
+
+.new-search-button {
+    background-color:white;
+    color: blueviolet;
+    margin-right: 10px;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+}
+
+.reset-button {
+    background-color:blueviolet;
+    color: white;
+    letter-spacing: 1.3px;
+    font-weight: 500;
+}
+
+.button-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    margin-top : 20px;
+}
+
+.article {
+    overflow: scroll;
+}
+
+.article-wrapper {
+    padding: 30px 15px 0px 15px;
+}
+
+.article-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.article-title {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+    flex-grow: 8;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.article-subtitle {
+    display: flex;
+    margin-top : 25px;
+    margin-bottom :30px;
+}
+
+.newspaper-name {
+    font-size: 12px;
+    font-weight: bold;
+    line-height: 1.33;
+    letter-spacing: 0.4px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.article-date {
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.4px;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.article-content {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: justify;
+}
+
+
+.article-separator {
+    margin-top:30px;
+    width: 100%;
+    height: 1px;
+    background-color: #c4c4c4;
+}
+
+.period-selection {
+    margin-top:20px;
+    margin-bottom:40px;
+}
+
+.years {
+    display: flex;
+    justify-content: space-between;
+    .year__label {
+        display: block;
+        font-size: 12px;
+        &.right {
+            text-align: right;
+        }
+    }
+    .year__value {
+        font-size: 14px;
+        color: blueviolet;
+    }
+}
+
+.related-articles-link {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 1.33;
+    letter-spacing: 0.4px;
+    color: rgba(0, 0, 0, 0.6) !important;
+    text-decoration: none !important;
+}

@@ -1,0 +1,20 @@
+<div [formGroup]="parentForm">
+  <div class="input-icon login__item">
+    <input name="city" [formControlName]="'city'" type="text" class="input" placeholder="Search for a city">
+    <i class="fas fa-map-marker-alt"></i>
+  </div>
+  <div class="years">
+    <div class="year">
+      <span class="year__label">From</span>
+      <span class="year__value">{{ parentForm.value.ranges[0] }}</span>
+    </div>
+    <div class="year">
+      <span class="year__label right">To</span>
+      <span class="year__value">{{ parentForm.value.ranges[1] }}</span>
+    </div>
+  </div>
+  <nouislider name="ranges" class="login__item login__dates" [config]="config" [formControlName]="'ranges'"></nouislider>
+  <select name="language" class="select input" [formControlName]="'language'">
+    <option *ngFor="let lang of languages" [value]="lang.value">{{ lang.label }}</option>
+  </select>
+</div>
