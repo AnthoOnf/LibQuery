@@ -17,3 +17,4 @@ npm run start
 ## About
 
 This project allows to extract authors and their biographie, in order to populate our MongoDB.
+You can also extract the data in a JSON file.
